@@ -1,0 +1,61 @@
+/* Variables */
+
+$main-header-bg: #fff;
+$main-header-font-color: #444;
+$main-header-font-size: inherit;
+$main-header-line-height: 1.3rem;
+
+$main-header-logo-font-size: 1.8rem;
+$main-header-logo-line-height: 2.1rem;
+$main-header-logo-font-family: 'Aref Ruqaa', Arial, serif;
+$main-header-logo-font-color: inherit;
+
+/* Styles */
+
+.main-header {
+  display: flex;
+
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 15px;
+
+  color: $main-header-font-color;
+  background-color: $main-header-bg;
+
+  font-size: $main-header-font-size;
+  line-height: $main-header-line-height;
+
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 0 1px $main-header-font-color, 0 1px 2px 0 $main-header-font-color;
+  position: fixed;
+  top: 0;
+
+  .main-header-logo {
+    padding: 3px 10px 10px;
+
+    font-family: $main-header-logo-font-family;
+    font-size: $main-header-logo-font-size;
+    line-height: $main-header-logo-line-height;
+    color: $main-header-logo-font-color;
+    text-decoration: none;
+
+    flex-grow: 1;
+    flex-basis: 50%;
+
+    & a {
+      color: $main-header-logo-font-color;
+      text-decoration: none;
+    }
+  }
+
+  .auth-wrapper {
+    text-align: right;
+
+    flex-grow: 1;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

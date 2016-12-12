@@ -1,0 +1,28 @@
+/* Variables */
+
+$auth-button-font-size: inherit;
+$auth-button-line-height: 1.3rem;
+$auth-button-font-color: #444;
+$auth-button-bg: #fff;
+
+/* Styles */
+
+.auth-button {
+  color: $auth-button-font-color;
+  background-color: $auth-button-bg;
+
+  font-size: $auth-button-font-size;
+  line-height: $auth-button-line-height;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 10px;
+  border-right: 1px solid $auth-button-font-color;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
