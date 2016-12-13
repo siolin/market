@@ -1,0 +1,135 @@
+/* Variables */
+
+$auth-modal-bg: #fff;
+$auth-modal-font-color: #444;
+$auth-modal-font-size: inherit;
+$auth-modal-line-height: 1.3rem;
+
+/* Styles */
+
+.modal-wrapper {
+  position: absolute;
+  z-index: 2;
+  top: 20%;
+  right: 1.5rem;
+  left: 1.5rem;
+
+  box-sizing: border-box;
+  padding: 1rem;
+
+  color: $auth-modal-font-color;
+  background-color: $auth-modal-bg;
+  box-shadow: 0 0 0 1px $auth-modal-font-color, 0 0 6px 0 $auth-modal-font-color;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  label {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .label-title {
+    display: none;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+
+    border: none;
+    border-bottom: 1px solid $auth-modal-font-color;
+    outline: none;
+
+    font-size: inherit;
+    line-height: inherit;
+
+    &:focus + svg path{
+      fill: DeepSkyBlue;
+    }
+  }
+
+  input[type="submit"] {
+    cursor: pointer;
+
+    color: $auth-modal-font-color;
+    border: none;
+    outline: none;
+    background: $auth-modal-bg;
+
+    font-size: inherit;
+    line-height: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 0px;
+    bottom: 0.5rem;
+
+    width: 1.5rem;
+
+    path {
+      transition: .5s fill;
+
+      fill: $auth-modal-font-color;
+    }
+  }
+}
+
+.modal-wrapper-bg {
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba($auth-modal-font-color, .3);
+}
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 786px) {
+  .modal-wrapper {
+    top: 20%;
+    left: 30%;
+
+    width: 40%;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .modal-wrapper {
+    top: 20%;
+    left: 35%;
+
+    width: 30%;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .modal-wrapper {
+    top: 20%;
+    left: 40%;
+
+    width: 20%;
+  }
+}

@@ -13,6 +13,10 @@ $main-header-logo-font-color: inherit;
 /* Styles */
 
 .main-header {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+
   display: flex;
 
   box-sizing: border-box;
@@ -21,40 +25,42 @@ $main-header-logo-font-color: inherit;
 
   color: $main-header-font-color;
   background-color: $main-header-bg;
+  box-shadow: 0 0 0 1px $main-header-font-color, 0 1px 2px 0 $main-header-font-color;
 
   font-size: $main-header-font-size;
   line-height: $main-header-line-height;
 
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 0 0 1px $main-header-font-color, 0 1px 2px 0 $main-header-font-color;
-  position: fixed;
-  top: 0;
 
   .main-header-logo {
     padding: 3px 10px 10px;
 
+    text-decoration: none;
+
+    color: $main-header-logo-font-color;
+
     font-family: $main-header-logo-font-family;
     font-size: $main-header-logo-font-size;
     line-height: $main-header-logo-line-height;
-    color: $main-header-logo-font-color;
-    text-decoration: none;
 
     flex-grow: 1;
     flex-basis: 50%;
 
     & a {
-      color: $main-header-logo-font-color;
       text-decoration: none;
+
+      color: $main-header-logo-font-color;
     }
   }
 
   .auth-wrapper {
+    display: flex;
+
     text-align: right;
 
     flex-grow: 1;
     flex-basis: 50%;
-    display: flex;
     justify-content: flex-end;
     align-items: center;
   }

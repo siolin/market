@@ -8,15 +8,17 @@ $auth-button-bg: #fff;
 /* Styles */
 
 .auth-button {
+  padding: 0 10px;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
   color: $auth-button-font-color;
+  border-right: 1px solid $auth-button-font-color;
   background-color: $auth-button-bg;
 
   font-size: $auth-button-font-size;
   line-height: $auth-button-line-height;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0 10px;
-  border-right: 1px solid $auth-button-font-color;
 
   &:last-child {
     border-right: none;

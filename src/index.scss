@@ -19,8 +19,13 @@ body {
   line-height: $line-heiht;
 }
 
+.content {
+  margin-top: 4rem;
+}
+
 /* Imports components */
 @import 'app/components/mainHeader/mainHeader';
 @import 'app/components/auth/authButton/authButton';
+@import 'app/components/auth/authModal/authModal';
 
 /* Imports pages */

@@ -6,8 +6,37 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('app', {
+    .state('home', {
       url: '/',
-      component: 'app'
+      component: 'home',
+      resolve: {
+        products($http, $log) {
+          $log.log('Resolve function');
+          return $http.get('http://smktesting.herokuapp.com/api/products/').then(data => {
+            $log.log(data);
+          },
+          error => {
+            $log.log(error);
+          });
+        }
+      }
+    })
+    .state('registrate', {
+      url: '/registrate',
+      component: 'authModal',
+      resolve: {
+        modalName() {
+          return 'registrate';
+        }
+      }
+    })
+    .state('login', {
+      url: '/login',
+      component: 'authModal',
+      resolve: {
+        modalName() {
+          return 'login';
+        }
+      }
     });
 }
