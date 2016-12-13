@@ -1,8 +1,8 @@
 <div class="modal-wrapper" ng-switch="$ctrl.modalName">
 
-  <form action="" ng-switch-when="login" name="loginFrom">
+  <form action="" ng-switch-when="login" name="loginFrom" ng-submit="$ctrl.login($event)">
     <label for="login"><span class="label-title">Логин</span>
-      <input type="text" id="login" name="login" placeholder="Логин" required="true">
+      <input type="text" id="login" name="login" placeholder="Логин" required="true" ng-model="$ctrl.username">
       <!-- SVG icon login -->
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
         <g>
@@ -14,7 +14,7 @@
       </svg>
     </label>
     <label for="password"><span class="label-title">Пароль</span>
-      <input type="password" id="password" name="login" placeholder="Пароль" required="true">
+      <input type="password" id="password" name="login" placeholder="Пароль" required="true" ng-model="$ctrl.password">
       <!-- SVG icon key -->
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -45,9 +45,9 @@
     <input type="submit" value="Войти">
   </form>
 
-  <form action="" ng-switch-when="registrate" name="registrateForm">
+  <form action="" ng-switch-when="registrate" name="registrateForm" ng-submit="$ctrl.registrate($event)">
     <label for="login"><span class="label-title">Логин</span>
-      <input type="text" id="login" name="login" placeholder="Логин" required="true">
+      <input type="text" id="login" name="login" placeholder="Логин" required="true" ng-model="$ctrl.username">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
         <g>
           <g>
@@ -58,7 +58,7 @@
       </svg>
     </label>
     <label for="password"><span class="label-title">Пароль</span>
-      <input type="password" id="password" name="password" placeholder="Пароль" required="true">
+      <input type="password" id="password" name="password" placeholder="Пароль" required="true" ng-model="$ctrl.password">
       <!-- SVG icon key -->
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -87,7 +87,7 @@
       </svg>
     </label>
     <label for="confirmPassword"><span class="label-title">Подтвердите пароль</span>
-      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Подтвердите пароль" required="true">
+      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Подтвердите пароль" required="true" ng-model="$ctrl.confirmPassword">
       <!-- SVG icon key -->
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -116,6 +116,7 @@
       </svg>
     </label>
     <input type="submit" value="Зарегистрироваться">
+    <span class="modal-wrapper-error-message">{{$ctrl.errorMessage}}</span>
   </form>
 </div>
 <!-- <div class="modal-wrapper-bg"></div> -->

@@ -3,9 +3,9 @@ export class AuthButtonController {
     'ngInject';
 
     this.state = {
-      logIn: 'Войти',
+      logIn: 'Вход',
       registrate: 'Регистрация',
-      logOut: 'Выйти'
+      logOut: 'Выход'
     };
   }
 }

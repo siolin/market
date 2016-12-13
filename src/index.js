@@ -1,6 +1,8 @@
 import angular from 'angular';
 
 import 'angular-ui-router';
+import 'angular-cookies';
+import 'angular-local-storage';
 import routesConfig from './routes';
 
 /* Components */
@@ -14,7 +16,7 @@ import {home} from './app/pages/home/home.component';
 import './index.scss';
 
 angular
-  .module('app', ['ui.router'])
+  .module('app', ['ui.router', 'LocalStorageModule', 'ngCookies'])
   .config(routesConfig)
   .component('home', home)
   .component('mainHeader', mainHeader)

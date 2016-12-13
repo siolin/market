@@ -11,13 +11,13 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       component: 'home',
       resolve: {
         products($http, $log) {
-          $log.log('Resolve function');
-          return $http.get('http://smktesting.herokuapp.com/api/products/').then(data => {
-            $log.log(data);
-          },
-          error => {
-            $log.log(error);
-          });
+          return $http.get('http://smktesting.herokuapp.com/api/products/').then(
+            data => {
+              $log.log(data);
+            },
+            error => {
+              $log.log(error);
+            });
         }
       }
     })
