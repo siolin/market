@@ -1,11 +1,12 @@
 export class AuthModalController {
-  constructor($http, $log, $cookies, localStorageService, $state) {
+  constructor($http, $log, $cookies, localStorageService, $state, $rootScope) {
     'ngInject';
     this.$http = $http;
     this.$log = $log;
     this.$cookies = $cookies;
     this.localStorageService = localStorageService;
     this.$state = $state;
+    this.$rootScope = $rootScope;
     this.api = {
       base: 'http://smktesting.herokuapp.com',
       registrate: '/api/register/',
@@ -30,6 +31,7 @@ export class AuthModalController {
           if (data.data.success === true) {
             this.$cookies.put('token', data.data.token);
             this.localStorageService.set('token', data.data.token);
+            this.$rootScope.auth = true;
             this.$state.go('home');
           } else {
             this.errorMessage = data.data.message;
@@ -62,6 +64,7 @@ export class AuthModalController {
           this.$cookies.put('token', data.data.token);
           this.localStorageService.remove('token');
           this.localStorageService.set('token', data.data.token);
+          this.$rootScope.auth = true;
           this.$state.go('home');
         } else {
           this.errorMessage = data.data.message;

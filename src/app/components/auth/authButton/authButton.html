@@ -1,3 +1,3 @@
-<a class="auth-button" ui-sref="registrate">{{$ctrl.state.registrate}}</a>
-<a class="auth-button" ui-sref="login">{{$ctrl.state.logIn}}</a>
-<a class="auth-button">{{$ctrl.state.logOut}}</a>
+<a class="auth-button" ng-if="!$ctrl.$rootScope.auth" ui-sref="registrate">{{$ctrl.state.registrate}}</a>
+<a class="auth-button" ng-if="!$ctrl.$rootScope.auth" ui-sref="login">{{$ctrl.state.logIn}}</a>
+<a class="auth-button" ng-if="$ctrl.$rootScope.auth" href="#" ng-click="$ctrl.logout($event)">{{$ctrl.state.logOut}}</a>
