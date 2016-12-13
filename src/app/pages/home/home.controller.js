@@ -1,6 +1,5 @@
 export class HomeController {
-  constructor($log) {
+  constructor() {
     'ngInject';
-    $log.log(this);
   }
 }

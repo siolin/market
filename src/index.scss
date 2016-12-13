@@ -27,5 +27,9 @@ body {
 @import 'app/components/mainHeader/mainHeader';
 @import 'app/components/auth/authButton/authButton';
 @import 'app/components/auth/authModal/authModal';
+@import 'app/components/auth/login/login';
+@import 'app/components/auth/registrate/registrate';
+
 
 /* Imports pages */
+@import 'app/pages/home/home';

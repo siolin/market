@@ -1,0 +1,36 @@
+/* Variables */
+$home-font-size: inherit;
+$home-line-height: 1.3rem;
+$home-font-color: #444;
+
+/* Styles */
+
+.products-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  .products-list {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .products-item a {
+    color: $home-font-color;
+    font-size: $home-font-size;
+    line-height: $home-line-height;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: .5rem;
+    margin: 0 1rem;
+    border-bottom: 1px solid $home-font-color;
+  }
+}

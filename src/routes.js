@@ -6,14 +6,14 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('home', {
-      url: '/',
+    .state('productList', {
+      url: '/list',
       component: 'home',
       resolve: {
         products($http, $log) {
           return $http.get('http://smktesting.herokuapp.com/api/products/').then(
             data => {
-              $log.log(data);
+              return data.data;
             },
             error => {
               $log.log(error);
@@ -21,6 +21,31 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    // .state('productList.product', {
+    //   url: '/{productId}',
+    //   component: 'productDetail',
+    //   resolve: {
+    //     comments($stateParams, $log, $http) {
+    //       return $http.get(`http://smktesting.herokuapp.com/api/reviews/${$stateParams.productId}`).then(
+    //         data => {
+    //           return data.data;
+    //         },
+    //         error => {
+    //           $log.log(error);
+    //         }
+    //       );
+    //     },
+    //     products($stateParams, $http, $log) {
+    //       return $http.get('http://smktesting.herokuapp.com/api/products/').then(
+    //         data => {
+    //           return data.data[$stateParams.productId];
+    //         },
+    //         error => {
+    //           $log.log(error);
+    //         });
+    //     }
+    //   }
+    // })
     .state('registrate', {
       url: '/registrate',
       component: 'authModal',
@@ -38,5 +63,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
           return 'login';
         }
       }
+    })
+    .state('logout', {
+      url: '/logout',
+      component: 'logout'
     });
 }
