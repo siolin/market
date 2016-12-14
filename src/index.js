@@ -5,6 +5,9 @@ import 'angular-cookies';
 import 'angular-local-storage';
 import routesConfig from './routes';
 
+/* Modules */
+import {cart} from './app/modules/cart/cart.module';
+
 /* Components */
 import {mainHeader} from './app/components/mainHeader/mainHeader.component';
 import {authButton} from './app/components/auth/authButton/authButton.component';
@@ -25,7 +28,7 @@ import {product} from './app/pages/product/product.component';
 import './index.scss';
 
 angular
-  .module('app', ['ui.router', 'LocalStorageModule', 'ngCookies'])
+  .module('app', ['ui.router', 'LocalStorageModule', 'ngCookies', cart])
   .config(routesConfig)
   .service('authService', AuthService)
   .service('ProductsService', ProductsService)

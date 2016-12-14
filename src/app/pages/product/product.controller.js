@@ -14,7 +14,10 @@ export class ProductController {
       text: this.comment
     }).then(data => {
       if (data.success) {
-        this.$state.reload('product');
+        this.ProductsService.getComments(this.product.id).then(data => {
+          this.comments = data;
+          this.comment = null;
+        });
       }
     });
   }

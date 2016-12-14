@@ -34,3 +34,7 @@ body {
 /* Imports pages */
 @import 'app/pages/list/list';
 @import 'app/pages/product/product';
+
+/* Import modules */
+@import 'app/modules/cart/components/cartButton/cartButton';
+@import 'app/modules/cart/components/addCartButton/addCartButton';
