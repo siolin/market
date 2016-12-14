@@ -7,74 +7,78 @@ $login-line-height: 1.3rem;
 
 /* Styles */
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
 
   align-items: center;
-}
 
-label {
-  position: relative;
+  label {
+    position: relative;
 
-  display: block;
+    display: block;
 
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.label-title {
-  display: none;
-}
-
-input[type="text"],
-input[type="password"] {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.5rem 2rem 0.5rem 0.5rem;
-
-  border: none;
-  border-bottom: 1px solid $login-font-color;
-  outline: none;
-
-  font-size: inherit;
-  line-height: inherit;
-
-  &:focus + svg path{
-    fill: DeepSkyBlue;
+    width: 100%;
+    margin-bottom: 10px;
   }
-}
 
-input[type="submit"] {
-  cursor: pointer;
-
-  color: $login-font-color;
-  border: none;
-  outline: none;
-  background: $login-bg;
-
-  font-size: inherit;
-  line-height: inherit;
-
-  &:hover {
-    text-decoration: underline;
+  .label-title {
+    display: none;
   }
-}
 
-svg {
-  position: absolute;
-  right: 0px;
-  bottom: 0.5rem;
+  input[type="text"],
+  input[type="password"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
 
-  width: 1.5rem;
+    border: none;
+    border-bottom: 1px solid $login-font-color;
+    outline: none;
 
-  path {
-    transition: .5s fill;
+    font-size: inherit;
+    line-height: inherit;
 
-    fill: $login-font-color;
+    &:focus + svg path{
+      fill: DeepSkyBlue;
+    }
   }
-}
 
-.modal-wrapper-error-message {
-  color: LightCoral;
+  input[type="submit"] {
+    padding: .5rem;
+
+    cursor: pointer;
+
+    color: $login-font-color;
+    border: none;
+    outline: none;
+    background: $login-bg;
+
+    font-size: inherit;
+    line-height: inherit;
+
+    &:hover {
+      color: $login-bg;
+      border-radius: 5px;
+      background-color: $login-font-color;
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 0px;
+    bottom: 0.5rem;
+
+    width: 1.5rem;
+
+    path {
+      transition: .5s fill;
+
+      fill: $login-font-color;
+    }
+  }
+
+  .modal-wrapper-error-message {
+    color: LightCoral;
+  }
 }

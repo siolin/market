@@ -3,7 +3,7 @@ import productDetailTemplate from './productDetail.html';
 
 export const productDetail = {
   bindings: {
-    products: '<',
+    product: '<',
     comments: '<'
   },
   template: productDetailTemplate,

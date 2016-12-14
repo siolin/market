@@ -7,45 +7,26 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
     .state('productList', {
-      url: '/list',
-      component: 'home',
+      url: '/',
+      component: 'productList',
       resolve: {
-        products($http, $log) {
-          return $http.get('http://smktesting.herokuapp.com/api/products/').then(
-            data => {
-              return data.data;
-            },
-            error => {
-              $log.log(error);
-            });
+        products(ProductsService) {
+          return ProductsService.getProducts();
         }
       }
     })
-    // .state('productList.product', {
-    //   url: '/{productId}',
-    //   component: 'productDetail',
-    //   resolve: {
-    //     comments($stateParams, $log, $http) {
-    //       return $http.get(`http://smktesting.herokuapp.com/api/reviews/${$stateParams.productId}`).then(
-    //         data => {
-    //           return data.data;
-    //         },
-    //         error => {
-    //           $log.log(error);
-    //         }
-    //       );
-    //     },
-    //     products($stateParams, $http, $log) {
-    //       return $http.get('http://smktesting.herokuapp.com/api/products/').then(
-    //         data => {
-    //           return data.data[$stateParams.productId];
-    //         },
-    //         error => {
-    //           $log.log(error);
-    //         });
-    //     }
-    //   }
-    // })
+    .state('product', {
+      url: '/product/{productId}',
+      component: 'productDetail',
+      resolve: {
+        product(ProductsService, $stateParams) {
+          return ProductsService.getProduct($stateParams.productId);
+        },
+        comments($stateParams, ProductsService) {
+          return ProductsService.getComments($stateParams.productId);
+        }
+      }
+    })
     .state('registrate', {
       url: '/registrate',
       component: 'authModal',

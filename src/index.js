@@ -16,9 +16,10 @@ import {logout} from './app/components/auth/logout/logout.component';
 
 /* Services */
 import {AuthService} from './app/services/auth/auth.service';
+import {ProductsService} from './app/services/products/products.service';
 
 /* Pages */
-import {home} from './app/pages/home/home.component';
+import {productList} from './app/pages/productList/productList.component';
 import {productDetail} from './app/pages/productDetail/productDetail.component';
 
 import './index.scss';
@@ -27,7 +28,8 @@ angular
   .module('app', ['ui.router', 'LocalStorageModule', 'ngCookies'])
   .config(routesConfig)
   .service('authService', AuthService)
-  .component('home', home)
+  .service('ProductsService', ProductsService)
+  .component('productList', productList)
   .component('productDetail', productDetail)
   .component('login', login)
   .component('registrate', registrate)
@@ -35,3 +37,20 @@ angular
   .component('mainHeader', mainHeader)
   .component('authModal', authModal)
   .component('authButton', authButton);
+
+angular.module('app').config(['$httpProvider', $httpProvider => {
+  $httpProvider.interceptors.push('request');
+}]);
+
+angular.module('app').factory('request', ['$log', 'localStorageService', ($log, localStorageService) => {
+  const request = {
+    request(config) {
+      const token = localStorageService.get('token');
+      if (token) {
+        config.headers.Authorization = `Token ${localStorageService.get('token')}`;
+      }
+      return config;
+    }
+  };
+  return request;
+}]);

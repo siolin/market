@@ -3,7 +3,6 @@ export class AuthService {
     'ngInject';
     this.$http = $http;
     this.$log = $log;
-    // $log.log('AuthService used');
     this.localStorageService = localStorageService;
 
     this.api = {

@@ -1,8 +1,30 @@
-<div class="product-detail-wrapper">
-  <div class="product-detail-image-wrapper">
-    <img ng-src="http://smktesting.herokuapp.com/static/{{$ctrl.products.img}}" alt="{{$ctrl.products.title}}">
-  </div>
-  <div class="product-detail-comments-wrapper">
+<section class="product">
 
+  <div class="preview">
+    <div class="preview-image">
+      <img src="http://smktesting.herokuapp.com/static/{{$ctrl.product.img}}" alt="{{$ctrl.product.title}}">
+    </div>
+    <div class="description">
+      <h3 class="description-title">{{$ctrl.product.title}}</h3>
+      <p class="description-content">{{$ctrl.product.text}}</p>
+    </div>
   </div>
-</div>
+
+  <h3>Comments</h3>
+
+  <ul class="comment-list">
+    <li class="comment-item" ng-repeat="comment in $ctrl.comments">
+      <div class="comment-content">{{comment.text}}</div>
+      <div class="comment-content-wrapper">
+        <div class="comment-create">{{comment.created_at | date : medium}}</div>
+        <div class="comment-rate">Rate: {{comment.rate}}</div>
+      </div>
+    </li>
+  </ul>
+
+  <form action="" class="comment-form" ng-submit="$ctrl.addComment($event)">
+    <textarea name="name" rows="8" cols="80" placeholder="Комментарий"></textarea>
+    <input type="submit" value="Комментировать">
+  </form>
+
+</section>
