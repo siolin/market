@@ -13,7 +13,7 @@ export class LoginController {
       password: this.password
     }).then(data => {
       if (data.success) {
-        this.$state.go('productList');
+        this.$state.go('list');
       } else {
         this.errorMessage = data.message;
       }

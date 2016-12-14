@@ -19,8 +19,8 @@ import {AuthService} from './app/services/auth/auth.service';
 import {ProductsService} from './app/services/products/products.service';
 
 /* Pages */
-import {productList} from './app/pages/productList/productList.component';
-import {productDetail} from './app/pages/productDetail/productDetail.component';
+import {list} from './app/pages/list/list.component';
+import {product} from './app/pages/product/product.component';
 
 import './index.scss';
 
@@ -29,8 +29,8 @@ angular
   .config(routesConfig)
   .service('authService', AuthService)
   .service('ProductsService', ProductsService)
-  .component('productList', productList)
-  .component('productDetail', productDetail)
+  .component('list', list)
+  .component('product', product)
   .component('login', login)
   .component('registrate', registrate)
   .component('logout', logout)

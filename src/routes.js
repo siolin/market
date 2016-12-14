@@ -6,9 +6,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('productList', {
+    .state('list', {
       url: '/',
-      component: 'productList',
+      component: 'list',
       resolve: {
         products(ProductsService) {
           return ProductsService.getProducts();
@@ -17,7 +17,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('product', {
       url: '/product/{productId}',
-      component: 'productDetail',
+      component: 'product',
       resolve: {
         product(ProductsService, $stateParams) {
           return ProductsService.getProduct($stateParams.productId);

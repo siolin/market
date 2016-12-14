@@ -38,4 +38,14 @@ export class ProductsService {
         this.$log.log(error);
       });
   }
+
+  addComment(id, data) {
+    return this.$http.post(`http://smktesting.herokuapp.com/api/reviews/${id}`, data).then(
+      data => {
+        return data.data;
+      },
+      error => {
+        this.$log.log(error);
+      });
+  }
 }

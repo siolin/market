@@ -1,4 +1,4 @@
-export class ProductListController {
+export class ListController {
   constructor() {
     'ngInject';
   }
