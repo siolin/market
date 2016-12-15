@@ -5,7 +5,7 @@ export const addCartButton = {
   bindings: {
     image: '<',
     product: '<',
-    title: '<'
+    ptitle: '<'
   },
   template: addCartButtonTemplate,
   controller: AddCartButtonController

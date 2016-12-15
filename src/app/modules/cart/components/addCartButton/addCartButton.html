@@ -1,3 +1,4 @@
-<div class="add-cart-button">
-  <button type="button" name="button" class="button" ng-click="$ctrl.addProduct($ctrl.product)">Купить</button>
+<div class="add-cart-button" ng-switch="$ctrl.buttonDisable">
+  <button type="button" name="button" class="button" ng-click="$ctrl.addProduct()" ng-switch-when="false">Купить</button>
+  <a ui-sref="cart" ng-switch-when="true">Перейти в корзину</a>
 </div>

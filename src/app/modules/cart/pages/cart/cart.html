@@ -1,0 +1,13 @@
+<div class="cart">
+  <div class="cart-product" ng-repeat="(key, product) in $ctrl.products">
+    <div class="product-image"><img src="http://smktesting.herokuapp.com/static/{{product.img}}" alt="{{product.title}}"></div>
+    <div class="product-title">{{product.title}}</div>
+    <div class="count">
+      <button class="count-down" ng-style="$ctrl.products[key].countDown" ng-click="$ctrl.down(key)">-</button>
+      <input type="text" class="count-preview" ng-model="$ctrl.products[key].count">
+      <button class="count-up" ng-click="$ctrl.up(key)">+</button>
+    </div>
+    <div class="price">{{product.price | currency:"$"}}</div>
+  </div>
+  <div class="total-price">{{$ctrl.total | currency:"$"}}</div>
+</div>
