@@ -20,6 +20,7 @@ $cart-color: #444;
   align-items: center;
 
   .cart-product {
+    position: relative;
     display: flex;
     flex-direction: row;
 
@@ -49,7 +50,6 @@ $cart-color: #444;
     width: 100px;
     padding: .5rem;
 
-    flex-basis: 100px;
 
 
     img {
@@ -60,8 +60,15 @@ $cart-color: #444;
   .product-image,
   .product-title,
   .count,
-  .price {
+  .price,
+  .products-price {
+    flex-basis: 150px;
     flex-grow: 1;
+  }
+
+  .price,
+  .products-price {
+    text-align: center;
   }
 
   .count {
@@ -112,6 +119,23 @@ $cart-color: #444;
     line-height: 1.8rem;
     font-weight: bold;
     color: green;
+  }
+
+  .delete {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 1rem;
+    left: -1.5rem;
+    cursor: pointer;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      path {
+        fill: #444;
+      }
+    }
   }
 
 }

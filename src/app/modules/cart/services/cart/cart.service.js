@@ -15,6 +15,8 @@ export class CartService {
       title,
       img
     };
+    const totalPrice = data.price * data.count;
+    data.totalPrice = totalPrice;
     const cart = this.localStorageService.get('cart') || {};
     cart[id] = data;
     this.localStorageService.set('cart', cart);
@@ -46,6 +48,19 @@ export class CartService {
   updateProduct(id, count) {
     const data = this.localStorageService.get('cart');
     data[id].count = count;
+    data[id].totalPrice = data[id].price * count;
     this.localStorageService.set('cart', data);
+  }
+
+  deleteProduct(productId) {
+    const data = this.localStorageService.get('cart');
+    for (const id in data) {
+      if (parseInt(id, 10) === parseInt(productId, 10)) {
+        delete data[id];
+      }
+    }
+    this.localStorageService.set('cart', data);
+    this.$rootScope.$broadcast('cartUpdate');
+    return true;
   }
 }

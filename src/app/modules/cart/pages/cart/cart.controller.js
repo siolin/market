@@ -41,6 +41,14 @@ export class CartController {
 
   updateCart(id, count) {
     this.CartService.updateProduct(id, count);
+    this.products = this.CartService.getProducts();
+  }
+
+  deleteProduct(id) {
+    if (this.CartService.deleteProduct(id)) {
+      this.products = this.CartService.getProducts();
+    }
+    this.totalPrice();
   }
 
   $onInit() {
