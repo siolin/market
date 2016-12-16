@@ -12,8 +12,12 @@ export class AuthService {
     };
   }
 
+  addToken(token) {
+    return this.localStorageService.set('token', token);
+  }
+
   logout() {
-    return this.localStorageService.remove('token');
+    return this.localStorageService.clearAll(/token/);
   }
 
   checkAuth() {
@@ -32,7 +36,7 @@ export class AuthService {
     }).then(
       authInfo => {
         if (authInfo.data.success === true) {
-          if (this.localStorageService.set('token', authInfo.data.token)) {
+          if (this.addToken(authInfo.data.token)) {
             const results = {
               success: true
             };
@@ -56,11 +60,11 @@ export class AuthService {
     }).then(
       authInfo => {
         if (authInfo.data.success === true) {
-          if (this.localStorageService.set('token', authInfo.data.token)) {
+          if (this.addToken(authInfo.data.token)) {
             const results = {
               success: true
             };
-            this.$log.log(results);
+            // this.$log.log(results);
             return results;
           }
         } else {
@@ -68,7 +72,7 @@ export class AuthService {
             success: false,
             message: authInfo.data.message
           };
-          this.$log.log(results);
+          // this.$log.log(results);
           return results;
         }
       });
