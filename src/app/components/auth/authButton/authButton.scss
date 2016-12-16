@@ -3,28 +3,29 @@
 $auth-button-font-size: inherit;
 $auth-button-line-height: 1.3rem;
 $auth-button-font-color: #444;
-$auth-button-bg: #fff;
+$auth-button-bg: transparent;
 
 /* Styles */
 
 .auth-button {
-  padding: 0 10px;
+  padding: 0 .5rem;
 
   text-decoration: none;
-  text-transform: uppercase;
 
   color: $auth-button-font-color;
-  border-right: 1px solid $auth-button-font-color;
   background-color: $auth-button-bg;
 
   font-size: $auth-button-font-size;
   line-height: $auth-button-line-height;
 
-  &:last-child {
-    border-right: none;
-  }
-
   &:hover {
-    text-decoration: underline;
+    color: green;
   }
+}
+
+.user-button {
+  // display: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 1rem;
 }

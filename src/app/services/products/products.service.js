@@ -1,18 +1,15 @@
 export class ProductsService {
-  constructor($http, $log) {
+  constructor($http) {
     'ngInject';
     this.$http = $http;
-    this.$log = $log;
   }
 
   getProducts() {
     return this.$http.get('http://smktesting.herokuapp.com/api/products/').then(
       data => {
         return data.data;
-      },
-      error => {
-        this.$log.log(error);
-      });
+      }
+    );
   }
 
   getProduct(id) {
@@ -23,29 +20,23 @@ export class ProductsService {
             return product;
           }
         }
-      },
-      error => {
-        this.$log.log(error);
-      });
+      }
+    );
   }
 
   getComments(id) {
     return this.$http.get(`http://smktesting.herokuapp.com/api/reviews/${id}`).then(
       data => {
         return data.data;
-      },
-      error => {
-        this.$log.log(error);
-      });
+      }
+    );
   }
 
   addComment(id, data) {
     return this.$http.post(`http://smktesting.herokuapp.com/api/reviews/${id}`, data).then(
       data => {
         return data.data;
-      },
-      error => {
-        this.$log.log(error);
-      });
+      }
+    );
   }
 }
