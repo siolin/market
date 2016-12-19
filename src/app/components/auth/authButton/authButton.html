@@ -1,6 +1,6 @@
-<a class="auth-button" ng-if="!$ctrl.authService.checkAuth()" ui-sref="registrate">Регистрация</a>
-<a class="auth-button" ng-if="!$ctrl.authService.checkAuth()" ui-sref="login">Вход</a>
-<a class="auth-button" ng-if="$ctrl.authService.checkAuth()" ui-sref="logout">Выход</a>
+<a class="auth-button" ng-if="!$ctrl.checkAuth()" ui-sref="registrate">Регистрация</a>
+<a class="auth-button" ng-if="!$ctrl.checkAuth()" ui-sref="login">Вход</a>
+<a class="auth-button" ng-if="$ctrl.checkAuth()" ui-sref="logout">Выход</a>
 <svg class="user-button" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 53 53" style="enable-background:new 0 0 53 53;" xml:space="preserve">
 <path style="fill:#E7ECED;" d="M18.613,41.552l-7.907,4.313c-0.464,0.253-0.881,0.564-1.269,0.903C14.047,50.655,19.998,53,26.5,53

@@ -3,4 +3,8 @@ export class AuthButtonController {
     'ngInject';
     this.authService = authService;
   }
+
+  checkAuth() {
+    return this.authService.checkAuth();
+  }
 }
